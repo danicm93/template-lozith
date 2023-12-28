@@ -1,14 +1,14 @@
-import { Box, Container, Typography } from '@mui/material'
+import { Route, Routes } from 'react-router-dom'
+
+import { Home } from '@/pages'
+
 
 function App() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Material UI Vite.js example in TypeScript
-        </Typography>
-      </Box>
-    </Container>
+    <Routes>
+      <Route path="/" element={ <Home /> } />
+      {/* <Route path="contact" element={ <Contact /> } /> */}
+    </Routes>
   )
 }
 
