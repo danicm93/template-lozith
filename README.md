@@ -1,117 +1,49 @@
-# Guía
+# template-lozith
 
-## Instalación
+## Overview
+`template-lozith` is a ready-to-use template repository for quickly starting projects with a pre-configured React environment. This template is ideal for developers looking to jumpstart their React projects with TypeScript, Material-UI (MUI), react-router-dom for routing, and ESLint for code quality assurance.
 
-- Instalamos proyecto
-  - > npm create vite@latest
-- Nombre: yt-rock-paper-scissors
-- Fw: React + TS
-- Vamos al directorio
-  - > cd yt-rock-paper-scissors
-- Instalamos Pico.css
-  - > npm install @picocss/pico
-- Instalamos react-router-dom
-  - > npm install react-router-dom
-- Instalamos eslint
-  - > npx eslint --init
-- Ejecutamos
-  - > npm install
+## Features
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Material-UI (MUI)**: A popular React UI framework for faster and easier web development.
+- **react-router-dom**: A standard routing library for React.
+- **ESLint**: A static code analysis tool for identifying problematic patterns in JavaScript code.
 
-## Configuración
+## Getting Started
+To use this template for your project, follow these simple steps:
 
-- Añadimos un *.eslintignore*
-```
-.eslintrc.cjs
-```
+1. **Create a New Repository from this Template**
+   - Click on the "Use this template" button on the GitHub repository page.
+   - Name your new repository and set it up (public or private).
+   - Click "Create repository from template".
 
-- Configuramos el *.eslintrc.cjs*
-```
-module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": [
-    "@typescript-eslint",
-    "react"
-  ],
-  "rules": {
-    "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
-    "semi": ["error","never"],
-    "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/no-explicit-function-return-type": "off",
-    "@typescript-eslint/no-floating-promises": "off",
-    "@typescript-eslint/promise-function-async": "off"
-  }
-}
-```
-- Configuramos alias - *vite.config.js*
-```
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+2. **Clone Your New Repository**
+   - Clone the newly created repository to your local machine:
+     ```
+     git clone https://github.com/your-username/your-repository-name.git
+     ```
+   - Don't forget to replace `your-username` and `your-repository-name` with your actual GitHub username and new repository name.
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@': '/src',
-    },
-  },
-})
-```
+3. **Install Dependencies**
+   - Navigate to the cloned directory and install the necessary dependencies:
+     ```
+     cd your-repository-name
+     npm install
+     ```
 
-- Configuramos alias - *tsconfig.json*
-```
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+4. **Start Developing**
+   - Once the dependencies are installed, you can start the development server:
+     ```
+     npm start
+     ```
+   - Your application should now be running on `http://localhost:3000`.
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+## Customizing the Template
+Feel free to customize and extend this template as per your project needs. Update the components, add new libraries, or modify the configurations to tailor the setup to your requirements.
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+## Contributing
+Contributions to improve this template are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
 
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  },
-  "exclude": ["node_modules"],
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-}
-```
-
-## Limpiamos todo
-
-- Nos quedamos con el mínimo
-  - core/app.tsx (cambiamos el nombre a App.tsx)
-  - Adaptamos el main.tsx
-- Aplicamos **react-router-dom**
-- Creamos los modelos
+## License
+This project is open source and available under the [MIT License](LICENSE).
