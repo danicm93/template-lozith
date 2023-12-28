@@ -1,6 +1,14 @@
+import { Box, Container, Typography } from '@mui/material'
+
 function App() {
   return (
-    <p>Estamos 2</p>
+    <Container maxWidth="sm">
+      <Box sx={{ my: 4 }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Material UI Vite.js example in TypeScript
+        </Typography>
+      </Box>
+    </Container>
   )
 }
 
