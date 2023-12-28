@@ -5,6 +5,7 @@ module.exports = {
   },
   "extends": [
     "eslint:recommended",
+    "import",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended"
   ],
@@ -18,6 +19,15 @@ module.exports = {
     "react"
   ],
   "rules": {
+    "import/order": [
+      "error",
+      {
+        groups: [
+          ["builtin", "external"], "internal", ["parent", "sibling", "index"]
+        ],
+        "newlines-between": "always"
+      }
+    ],
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
