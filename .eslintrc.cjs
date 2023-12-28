@@ -5,9 +5,11 @@ module.exports = {
   },
   "extends": [
     "eslint:recommended",
-    "import",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -22,9 +24,7 @@ module.exports = {
     "import/order": [
       "error",
       {
-        groups: [
-          ["builtin", "external"], "internal", ["parent", "sibling", "index"]
-        ],
+        groups: [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
         "newlines-between": "always"
       }
     ],
