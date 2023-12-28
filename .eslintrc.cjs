@@ -20,6 +20,11 @@ module.exports = {
     "@typescript-eslint",
     "react"
   ],
+  settings: {
+    "import/resolver": {
+      typescript: {}
+    }
+  },
   "rules": {
     "import/order": [
       "error",
@@ -32,6 +37,8 @@ module.exports = {
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error","never"],
+    "import/default": "off",
+    "import/no-named-as-default-member": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-function-return-type": "off",
     "@typescript-eslint/no-floating-promises": "off",
