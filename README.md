@@ -1,30 +1,117 @@
-# React + TypeScript + Vite
+# Guía
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Instalación
 
-Currently, two official plugins are available:
+- Instalamos proyecto
+  - > npm create vite@latest
+- Nombre: yt-rock-paper-scissors
+- Fw: React + TS
+- Vamos al directorio
+  - > cd yt-rock-paper-scissors
+- Instalamos Pico.css
+  - > npm install @picocss/pico
+- Instalamos react-router-dom
+  - > npm install react-router-dom
+- Instalamos eslint
+  - > npx eslint --init
+- Ejecutamos
+  - > npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Configuración
 
-## Expanding the ESLint configuration
+- Añadimos un *.eslintignore*
+```
+.eslintrc.cjs
+```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
+- Configuramos el *.eslintrc.cjs*
+```
+module.exports = {
+  "env": {
+    "browser": true,
+    "es2021": true
   },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error","never"],
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-function-return-type": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/promise-function-async": "off"
+  }
+}
+```
+- Configuramos alias - *vite.config.js*
+```
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
+})
+```
+
+- Configuramos alias - *tsconfig.json*
+```
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Limpiamos todo
+
+- Nos quedamos con el mínimo
+  - core/app.tsx (cambiamos el nombre a App.tsx)
+  - Adaptamos el main.tsx
+- Aplicamos **react-router-dom**
+- Creamos los modelos
