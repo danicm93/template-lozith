@@ -50,6 +50,7 @@ module.exports = {
     "quotes": ["error", "single"],
     "semi": ["error","never"],
     "import/default": "off",
+    "linebreak-style": "off",
     "import/no-named-as-default-member": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-function-return-type": "off",
